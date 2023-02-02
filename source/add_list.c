@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   add_list.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leyeghia <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: leyeghia <leyeghia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/14 18:22:30 by leyeghia          #+#    #+#             */
-/*   Updated: 2022/10/14 19:01:22 by leyeghia         ###   ########.fr       */
+/*   Created: 2023/01/24 11:27:25 by leyeghia          #+#    #+#             */
+/*   Updated: 2023/01/24 11:27:38 by leyeghia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#include "minishell.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h>
-# include <readline/readline.h>
-# include <readline/history.h>
-# include <fcntl.h>
+void	ft_list_add_back(t_main **lst, t_main *new)
+{
+	t_main	*testnode;
 
-#endif
+	if (*lst == NULL)
+		*lst = new;
+	else
+	{
+		testnode = *lst;
+		while (testnode->next != NULL)
+			testnode = testnode->next;
+		testnode->next = new;
+	}
+}

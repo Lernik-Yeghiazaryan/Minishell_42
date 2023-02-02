@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leyeghia <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: leyeghia <leyeghia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/14 18:29:26 by leyeghia          #+#    #+#             */
-/*   Updated: 2022/10/14 19:15:12 by leyeghia         ###   ########.fr       */
+/*   Created: 2023/01/16 18:09:17 by leyeghia          #+#    #+#             */
+/*   Updated: 2023/01/21 21:42:20 by leyeghia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int	main(int ac, char **av, char **env)
+void	cnf_error(char *cmd)
 {
-	char	*str;
-
-	while (1)
-	{
-		str = readline("Minishell$ ");
-	}
+	ft_putstr_fd("command not found: ", 2);
+	ft_putstr_fd(&cmd[0], 2);
+	ft_putstr_fd("\n", 2);
+	exit (127);
 }
